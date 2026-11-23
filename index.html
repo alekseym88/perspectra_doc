@@ -752,9 +752,7 @@
   </head>
   <body>
     <main id="top" tabindex="-1">
-      <header class="manual-header">
-        <h1 id="manual-title" tabindex="-1">Documentation</h1>
-      </header>
+      
 
       <!-- Getting started -->
       <section class="chapter" id="getting-started" data-topic="setup" tabindex="-1">
@@ -2485,19 +2483,12 @@
         <article class="entry" id="photo-matching" data-entry data-title="Photo Matching" tabindex="-1">
           <h3>Photo Matching<a class="permalink" href="#photo-matching" aria-label="Link to Photo Matching">#</a></h3>
           <p class="where"><span>WHERE</span> 3D Viewport sidebar → Perspectra → Photo → Photo Matching</p>
-          <p>Available in Standard and Pro from 0.1.2. After estimating the camera and choosing
-            <strong>Add to Scene</strong>, select the mesh in Object Mode and look through the matched
+          <p>Available in Standard and Pro from 0.1.2. After estimating the camera, select a scene mesh in Object Mode and look through the matched
             camera. For a lens-distorted photo, switch the background to <strong>Undistorted</strong>.</p>
           <ul>
-            <li><strong>Fit Primitive to Image</strong> — Drag a corner or edge pin onto the corresponding
-              feature in the photo. One pin positions the mesh at its estimated depth. Add a second to
+            <li><strong>Fit Mesh to Image</strong> — In 0.1.5, hover anywhere along a mesh edge inside the photo.
+              Drag the blue pin onto the matching image feature. You can also drag an existing corner or midpoint pin. One pin positions the mesh at its estimated depth. Add a second to
               adjust size and a third on another face to help set the heading.</li>
-            <li><strong>Fit Image Camera to 3D</strong> — Use this when the mesh already has the right
-              placement and dimensions. Drag its pins onto matching features in the photo to adjust
-              the camera pose. The adjustment affects the projection of the whole scene.</li>
-            <li><strong>Fit Cylinder Rims</strong> — Drag the left end, front-arc midpoint and right end
-              of each rim onto the corresponding image features. Use both rims to fit the cylinder’s
-              height and diameter.</li>
           </ul>
           <p>Release inside the photo to apply each pin. Releasing outside the photo discards that drag.
             Press <kbd>Enter</kbd> to keep the fit or <kbd>Esc</kbd> to restore the starting transform.</p>
