@@ -1263,6 +1263,7 @@
             background. It estimates the field of view, orientation, lens distortion, camera height and scene
             scale, then adds guides so you can fine-tune the match.
           </p>
+          <p>Perspectra first checks ordinary straight lines. If at least 10 lines support the perspective estimate, including at least three in each of two directions, it skips the DeepLSD line search. With weaker support it can run DeepLSD to look for more edges. A separate progress message shows when Perspectra is checking round objects.</p>
           <ol class="steps">
             <li>Choose the reference image and a quality preset.</li>
             <li>Click <strong>Estimate Camera</strong> and wait for the job to finish.</li>
@@ -1708,11 +1709,9 @@
             Scale from a
             Person<a class="permalink" href="#person-scale" aria-label="Link to Scale from a Person">#</a>
           </h3>
-          <p class="where"><span>WHERE</span> Video → Floor and Scale</p>
-          <p>
-            When you have no measured object, place the reference figure beside a standing person in the shot.
-            Set its Height, then adjust Scene scale until the two look the same height.
-          </p>
+          <p class="where"><span>WHERE</span> Photo → Floor (Lite, Standard and Pro) / Video → Floor and Scale</p>
+          <p>In Photo, choose <strong>Scale from a Person</strong> and click the floor at the feet of a standing person. Set <strong>Height</strong> to their real height (default 1.70 m). Adjust <strong>Scene scale</strong> until the top of the silhouette matches their head. With Live Update off, click <strong>Apply Scale</strong>. Click the person button again to hide the silhouette.</p>
+          <p>In Video, place the figure on the footage and adjust its height and scene scale in Floor and Scale.</p>
           <div class="note">
             <span class="note-icon" aria-hidden="true">i</span>
             <p>
@@ -2492,6 +2491,7 @@
           </ul>
           <p>Release inside the photo to apply each pin. Releasing outside the photo discards that drag.
             Press <kbd>Enter</kbd> to keep the fit or <kbd>Esc</kbd> to restore the starting transform.</p>
+          <p id="land-on-floor"><strong>Land on Floor (Standard and Pro).</strong> Select the mesh in Object Mode after adding it to the scene. Set <strong>Offset</strong> to the height you want for its lowest point above the chosen floor, then click <strong>Land on Floor</strong>. Zero places the mesh on the floor. A positive value leaves clearance. Perspectra moves and uniformly resizes the mesh along the camera rays so its outline stays aligned with the photo.</p>
         </article>
 
         <article class="entry" id="real-mesh" data-entry data-title="Real: Free form and Smooth round" tabindex="-1">
