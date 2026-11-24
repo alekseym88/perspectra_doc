@@ -1264,6 +1264,9 @@
             scale, then adds guides so you can fine-tune the match.
           </p>
           <p>Perspectra first checks ordinary straight lines. If at least 10 lines support the perspective estimate, including at least three in each of two directions, it skips the DeepLSD line search. With weaker support it can run DeepLSD to look for more edges. A separate progress message shows when Perspectra is checking round objects.</p>
+          <p>In <strong>Normal</strong> mode, a weak long-lens estimate triggers a second check of the image lines.
+            Perspectra fits the vanishing points five times and uses the result when the lines consistently support
+            three directions. This helps estimate focal length when depth filtering removes useful edges.</p>
           <ol class="steps">
             <li>Choose the reference image and a quality preset.</li>
             <li>Click <strong>Estimate Camera</strong> and wait for the job to finish.</li>
@@ -2472,7 +2475,8 @@
                 </tr>
                 <tr>
                   <th scope="row">Plane</th>
-                  <td>Flat surfaces, panels or simple contact and projection geometry.</td>
+                  <td>Flat surfaces, panels or projection geometry. In Photo, the plane uses the surface’s depth to
+                    estimate its tilt. If a nearly level face contains your Set Floor point, its plane sits at world Z = 0.</td>
                 </tr>
               </tbody>
             </table>
@@ -2492,6 +2496,27 @@
           <p>Release inside the photo to apply each pin. Releasing outside the photo discards that drag.
             Press <kbd>Enter</kbd> to keep the fit or <kbd>Esc</kbd> to restore the starting transform.</p>
           <p id="land-on-floor"><strong>Land on Floor (Standard and Pro).</strong> Select the mesh in Object Mode after adding it to the scene. Set <strong>Offset</strong> to the height you want for its lowest point above the chosen floor, then click <strong>Land on Floor</strong>. Zero places the mesh on the floor. A positive value leaves clearance. Perspectra moves and uniformly resizes the mesh along the camera rays so its outline stays aligned with the photo.</p>
+          <p>Select a mesh to enable the landing button and its offset. In Pro, selecting a fitted photo person
+            or their body mesh lets you land the whole posed character together.</p>
+        </article>
+
+        <article class="entry" id="photo-person" data-entry data-title="Match and pose a person in a photo" tabindex="-1">
+          <h3>Match and pose a person in a photo<a class="permalink" href="#photo-person" aria-label="Link to Match and pose a person in a photo">#</a></h3>
+          <p class="where"><span>WHERE</span> Pro → Photo → 3D Objects from the Photo → Person</p>
+          <ol class="steps">
+            <li>Choose <strong>Person</strong> while picking objects. Choose <strong>Mixamo</strong>,
+              <strong>ANNY</strong> or <strong>Custom</strong>. For ANNY, choose Neutral, Female or Male.
+              For Custom, select a target armature and check its bone mapping.</li>
+            <li>Click the person in the photo. If you change the model or gender after the preview appears,
+              click <strong>Refit Person</strong>. Choose <strong>Add to Scene</strong> to keep the character.</li>
+            <li>Select the character or body mesh and open <strong>Person Pose → Edit Pose Here</strong>.
+              Select a joint and press <kbd>G</kbd> to move it with inverse kinematics, or select a bone and press
+              <kbd>R</kbd> to rotate it within its joint limits. <strong>Move Chain</strong> controls how far
+              the movement travels through the body.</li>
+            <li>Click <strong>Keep Pose</strong> to apply the edit or <strong>Cancel</strong> to discard it.
+              <strong>Reset Pose</strong> restores the fitted pose. To place the feet on the floor, use
+              <a href="#land-on-floor">Land on Floor</a>.</li>
+          </ol>
         </article>
 
         <article class="entry" id="real-mesh" data-entry data-title="Real: Free form and Smooth round" tabindex="-1">
